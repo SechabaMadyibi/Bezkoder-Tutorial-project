@@ -1,5 +1,7 @@
 const express = require("express");
+//body-parser helps to parse the request and create the req.body object
 const bodyParser = require("body-parser");
+//cors provides Express middleware to enable CORS with various options.
 const cors = require("cors");
 const db = require("./app/models");
 const app = express();
@@ -35,6 +37,7 @@ app.get("/", (req, res) => {
 });
 
 require("./app/routes/tutorial.routes")(app);
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
